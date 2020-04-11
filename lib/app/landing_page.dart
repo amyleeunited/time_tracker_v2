@@ -1,11 +1,9 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tracker_flutter_course/app/home/jobs/jobs_page.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/sign_in_page.dart';
-import 'package:time_tracker_flutter_course/services/auth.dart';
-import 'package:time_tracker_flutter_course/services/database.dart';
+import 'package:time_tracker_v2/app/home/jobs/jobs_page.dart';
+import 'package:time_tracker_v2/app/sign_in/sign_in_page.dart';
+import 'package:time_tracker_v2/services/auth.dart';
+import 'package:time_tracker_v2/services/database.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -20,7 +18,7 @@ class LandingPage extends StatelessWidget {
               return SignInPage.create(context);
             }
             return Provider<Database>(
-              builder: (_) => FirestoreDatabase(uid: user.uid),
+              create: (_) => FirestoreDatabase(uid: user.uid),
               child: JobsPage(),
             );
           } else {

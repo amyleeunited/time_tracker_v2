@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/email_sign_in_bloc.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/email_sign_in_model.dart';
-import 'package:time_tracker_flutter_course/common_widgets/form_submit_button.dart';
-import 'package:time_tracker_flutter_course/common_widgets/platform_exception_alert_dialog.dart';
-import 'package:time_tracker_flutter_course/services/auth.dart';
+import 'package:time_tracker_v2/app/sign_in/email_sign_in_bloc.dart';
+import 'package:time_tracker_v2/app/sign_in/email_sign_in_model.dart';
+import 'package:time_tracker_v2/common_widgets/form_submit_button.dart';
+import 'package:time_tracker_v2/common_widgets/platform_exception_alert_dialog.dart';
+import 'package:time_tracker_v2/services/auth.dart';
 
 class EmailSignInFormBlocBased extends StatefulWidget {
   EmailSignInFormBlocBased({@required this.bloc});
@@ -14,7 +14,7 @@ class EmailSignInFormBlocBased extends StatefulWidget {
   static Widget create(BuildContext context) {
     final AuthBase auth = Provider.of<AuthBase>(context);
     return Provider<EmailSignInBloc>(
-      builder: (context) => EmailSignInBloc(auth: auth),
+      create: (context) => EmailSignInBloc(auth: auth),
       child: Consumer<EmailSignInBloc>(
         builder: (context, bloc, _) => EmailSignInFormBlocBased(bloc: bloc),
       ),

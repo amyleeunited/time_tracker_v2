@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/email_sign_in_change_model.dart';
-import 'package:time_tracker_flutter_course/common_widgets/form_submit_button.dart';
-import 'package:time_tracker_flutter_course/common_widgets/platform_exception_alert_dialog.dart';
-import 'package:time_tracker_flutter_course/services/auth.dart';
+import 'package:time_tracker_v2/app/sign_in/email_sign_in_change_model.dart';
+import 'package:time_tracker_v2/common_widgets/form_submit_button.dart';
+import 'package:time_tracker_v2/common_widgets/platform_exception_alert_dialog.dart';
+import 'package:time_tracker_v2/services/auth.dart';
 
 class EmailSignInFormChangeNotifier extends StatefulWidget {
   EmailSignInFormChangeNotifier({@required this.model});
@@ -13,7 +13,7 @@ class EmailSignInFormChangeNotifier extends StatefulWidget {
   static Widget create(BuildContext context) {
     final AuthBase auth = Provider.of<AuthBase>(context);
     return ChangeNotifierProvider<EmailSignInChangeModel>(
-      builder: (context) => EmailSignInChangeModel(auth: auth),
+      create: (context) => EmailSignInChangeModel(auth: auth),
       child: Consumer<EmailSignInChangeModel>(
         builder: (context, model, _) =>
             EmailSignInFormChangeNotifier(model: model),

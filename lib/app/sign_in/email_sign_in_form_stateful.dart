@@ -1,13 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/email_sign_in_model.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/validators.dart';
-import 'package:time_tracker_flutter_course/common_widgets/form_submit_button.dart';
-import 'package:time_tracker_flutter_course/common_widgets/platform_alert_dialog.dart';
-import 'package:time_tracker_flutter_course/common_widgets/platform_exception_alert_dialog.dart';
-import 'package:time_tracker_flutter_course/services/auth.dart';
+import 'package:time_tracker_v2/app/sign_in/email_sign_in_model.dart';
+import 'package:time_tracker_v2/app/sign_in/validators.dart';
+import 'package:time_tracker_v2/common_widgets/form_submit_button.dart';
+import 'package:time_tracker_v2/common_widgets/platform_exception_alert_dialog.dart';
+import 'package:time_tracker_v2/services/auth.dart';
 import 'package:flutter/services.dart';
 
 class EmailSignInFormStateful extends StatefulWidget with EmailAndPasswordValidators {

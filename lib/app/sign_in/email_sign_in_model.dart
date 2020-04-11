@@ -1,4 +1,4 @@
-import 'package:time_tracker_flutter_course/app/sign_in/validators.dart';
+import 'package:time_tracker_v2/app/sign_in/validators.dart';
 
 enum EmailSignInFormType { signIn, register }
 

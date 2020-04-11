@@ -1,4 +1,4 @@
-package com.codingwithflutter.timetrackerfluttercourse
+package com.example.time_tracker_v2
 
 import android.os.Bundle
 

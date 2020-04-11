@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/email_sign_in_page.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/sign_in_manager.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/sign_in_button.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/social_sign_in_button.dart';
-import 'package:time_tracker_flutter_course/common_widgets/platform_exception_alert_dialog.dart';
-import 'package:time_tracker_flutter_course/services/auth.dart';
+import 'package:time_tracker_v2/app/sign_in/email_sign_in_page.dart';
+import 'package:time_tracker_v2/app/sign_in/sign_in_manager.dart';
+import 'package:time_tracker_v2/app/sign_in/sign_in_button.dart';
+import 'package:time_tracker_v2/app/sign_in/social_sign_in_button.dart';
+import 'package:time_tracker_v2/common_widgets/platform_exception_alert_dialog.dart';
+import 'package:time_tracker_v2/services/auth.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({
@@ -20,10 +20,10 @@ class SignInPage extends StatelessWidget {
   static Widget create(BuildContext context) {
     final auth = Provider.of<AuthBase>(context);
     return ChangeNotifierProvider<ValueNotifier<bool>>(
-      builder: (_) => ValueNotifier<bool>(false),
+      create: (_) => ValueNotifier<bool>(false),
       child: Consumer<ValueNotifier<bool>>(
         builder: (_, isLoading, __) => Provider<SignInManager>(
-          builder: (_) => SignInManager(auth: auth, isLoading: isLoading),
+          create: (_) => SignInManager(auth: auth, isLoading: isLoading),
           child: Consumer<SignInManager>(
             builder: (context, manager, _) => SignInPage(
               manager: manager,
